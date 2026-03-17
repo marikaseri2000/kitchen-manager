@@ -43,12 +43,15 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrderItem
+        # Inserito unit_price come richiesto
         fields = [
             'id',
             'dish',
             'dish_details',
-            'quantity'
+            'quantity',
+            'unit_price'
         ]
+        read_only_fields = ['unit_price']  # Viene impostato dal sistema al momento dell'ordine
 
 # Serializer principale per gli Ordini
 class OrderSerializer(serializers.ModelSerializer):
@@ -57,19 +60,23 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
+        # Inserito total_amount come richiesto
         fields = [
             'id',
             'user',
             'status',
             'items',
             'created_at',
-            'notes'
+            'notes',
+            'total_amount'
         ]
+        read_only_fields = ['total_amount']
 
 # Serializer per le recensioni
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
+        # Il rating ora seguirà la validazione 1-5 definita nel modello
         fields = [
             'id',
             'order',
