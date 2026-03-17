@@ -19,10 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< feature/menu-management
     path('menu/', include("menu.urls")),
-=======
     path('api/', include('core.api.urls')),
-
->>>>>>> main
 ]
