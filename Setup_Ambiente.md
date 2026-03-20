@@ -20,10 +20,11 @@ chmod +x setup_dev.sh
 ```
 
 ### 2. Cosa fa lo script?
-Per garantire che tutto il team lavori con gli stessi standard, lo script esegue automaticamente:
+Per garantire che tutto il team lavori con gli stessi standard, lo script esegue automaticamente tre fasi critiche:
 
 1. **Migrazioni**: Allinea le tabelle del database all'ultima versione.
-2. **Seed Admin**: Crea (o aggiorna) un account amministratore con permessi completi e ruolo di business `admin`.
+2. **Seed Admin**: Crea o aggiorna l'account amministratore (`admin`/`admin123`) con ruolo di business `admin`.
+3. **Seed Menu**: Genera automaticamente categorie e piatti di test, inclusi casi limite per la UX.
 
 ### 3. Credenziali di Accesso Admin
 D'ora in poi, per i test nel pannello di amministrazione (`/admin/`), usa sempre queste credenziali:
@@ -32,6 +33,7 @@ D'ora in poi, per i test nel pannello di amministrazione (`/admin/`), usa sempre
 2. **Password**: `admin123`
 
 ### 4. Perché usare questo comando?
-- **Velocità**: Non devi usare `createsuperuser` manualmente ogni volta.
-- **Coerenza**: Assicura che l'utente admin abbia già il campo `role="admin"` necessario per le logiche del nostro progetto.
-- **Pattern Observer**: Permette di testare immediatamente i segnali (Signals) del backend e i vincoli sulle recensioni usando un utente con pieni poteri.
+- **Velocità**: Configura l'intero database (utenti + piatti) in un solo colpo.
+- **Test Soft Delete**: Il seed include piatti con `is_active=False` per testare che rimangano nello storico ordini senza essere visibili nel menu pubblico.
+- **Test Disponibilità**: Include piatti con `is_available=False` per verificare la gestione dei prodotti "Sold Out" nel frontend.
+- **Pattern Observer**: Permette di testare immediatamente i Signals (decremento scorte e sblocco recensioni) usando dati reali e coerenti
