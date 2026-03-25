@@ -179,7 +179,7 @@ Per ottenere `GEMINI_API_KEY` e possibile usare Google AI Studio.
 
 ## Setup ambiente
 
-Le istruzioni dettagliate per installazione e avvio locale sono documentate in [docs/Setup_Ambiente.md](/Users/elisabettafino/Desktop/Dark-kitchen/kitchen-manager/docs/Setup_Ambiente.md).
+Le istruzioni dettagliate per installazione e avvio locale sono documentate in [Setup_Ambiente.md](docs/Setup_Ambiente.md).
 
 Panoramica rapida:
 
