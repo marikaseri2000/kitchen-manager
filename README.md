@@ -281,4 +281,4 @@ Questo README descrive il comportamento effettivamente supportato dal codice pre
 ## Presentazione
 
 Per una panoramica sintetica del progetto, dell'architettura e delle funzionalità principali, è disponibile anche la presentazione finale:
-[Kitchen Manager - Presentazione finale]([(https://www.canva.com/design/DAHE-Op4psE/eWuLqj0TJJvMXSTK2NJY4A/view?utm_content=DAHE-Op4psE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h144d126ab9))
+[Kitchen Manager - Presentazione finale](https://www.canva.com/design/DAHE-Op4psE/eWuLqj0TJJvMXSTK2NJY4A/view?utm_content=DAHE-Op4psE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h144d126ab9)
